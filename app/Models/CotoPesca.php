@@ -9,4 +9,6 @@ class CotoPesca extends Model
 {
     use HasFactory;
     protected $table = "cotos_pesca";
+    protected $fillable = ["longitud","localidad","rio","especie"];
+
 }

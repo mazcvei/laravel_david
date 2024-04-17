@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/test', function () {
+    $gerente = \App\Models\User::find(4);
+    $pescador = \App\Models\User::find(8);
+   // dd($pescador->cotosPescaPivot);
+    foreach($pescador->cotosPescaPivot as $coto){
+        echo $coto->cotoPesca->rio ."<br>";
+    }
+   // dd($pescador->load('cotosPescaPivot','cotosPescaPivot.cotoPesca'));
+
+   // dd($licencia1->idiomas);
 });
