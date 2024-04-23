@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -11,7 +12,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        return view('users.index',compact('users'));
     }
 
     /**
@@ -19,7 +21,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.create');
     }
 
     /**
@@ -43,7 +45,8 @@ class UsuarioController extends Controller
      */
     public function edit(string $id)
     {
-        //
+       $user = User::find($id);
+       return view('users.edit',compact('user'));
     }
 
     /**
@@ -59,6 +62,6 @@ class UsuarioController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        dd("Eliminando user id : ".$id);
     }
 }

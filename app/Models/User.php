@@ -40,7 +40,7 @@ class User extends Authenticatable
         return $this->belongsTo(User::class,'guia_pesca_id','id');
     }
     public function licencia(){
-        return $this->hasOne(Licencia::class,'licencia_id','id');
+        return $this->hasOne(Licencia::class,'id','licencia_id');
     }
 
     public function hotelesGestionados()

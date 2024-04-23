@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,5 @@ Route::get('/test', function () {
 
    // dd($licencia1->idiomas);
 });
+
+Route::resource('user',UsuarioController::class);
