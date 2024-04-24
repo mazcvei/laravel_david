@@ -17,13 +17,12 @@
                 </div>
                 <div class="form-group col-md-3">
                     <label for="">Guia</label>
-                    <select class="form-control" type="text" name="rol">
+                    <select class="form-control" type="text" name="guia">
                         @php($guias = \App\Models\User::where('rol_id',3)->get())
                         <option value="">Sin guia</option>
                         @foreach($guias as $guia)
                             <option value="{{$guia->id}}">{{$guia->nombre}}</option>
                         @endforeach
-
                     </select>
                 </div>
                 <div class="form-group col-md-3">
