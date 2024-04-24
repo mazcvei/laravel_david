@@ -23,14 +23,14 @@
                     <a class="nav-link" href="#">Idiomas</a>
                 </li>
                 @auth
-                <form method="POST" action="{{ route('logout') }}">
+                <form method="POST" id="logout_form" action="{{ route('logout') }}">
                     @csrf
                     <li class="nav-item">
 
-                  {{--  <a class="nav-link" href="{{route('logout')}}"
-                                           onclick="this.closest('form').submit();">
+                    <a class="nav-link" href="{{route('logout')}}"
+                                           onclick="document.getElementById('logout_form').submit();">
                         {{ __('Log Out') }}
-                    </li>--}}
+                    </li>
                 </form>
                 @endauth
             </ul>
